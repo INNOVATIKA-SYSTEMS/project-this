@@ -11,7 +11,7 @@ setup(
         "psycopg2-binary",
         # добавьте другие зависимости из requirements.txt если они есть
     ],
-    author="Your Name",
-    description="Your project description",
+    author="Alan",
+    description="for import",
     python_requires=">=3.7",
 )

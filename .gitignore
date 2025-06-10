@@ -4,4 +4,4 @@ __pycache__/
 node_modules/
 dist/
 .venv
-.egg-info
+project-this.egg-info
