@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: project-this
+Version: 0.1.0
+Summary: Your project description
+Author: Your Name
+Requires-Python: >=3.7
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: python-dotenv
+Requires-Dist: psycopg2-binary
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
