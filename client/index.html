@@ -3,17 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя страница</title>
+    <title>AI & Analytics Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Chart.js для создания графиков -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Добро пожаловать</h1>
-    </header>
-    <main>
-        <p>Это базовая HTML страница.</p>
-    </main>
-    <footer>
-        <p>&copy; 2024</p>
-    </footer>
+    <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <h1>AI & Analytics Dashboard</h1>
+                <div class="auth-buttons" id="authButtons">
+                    <button id="loginBtn" class="btn btn-secondary">Вход</button>
+                    <button id="registerBtn" class="btn btn-secondary">Регистрация</button>
+                </div>
+                <div class="user-info hidden" id="userInfo">
+                    <span id="userName"></span>
+                    <button id="logoutBtn" class="btn btn-secondary">Выйти</button>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <button id="addChartBtn" class="btn">Добавить график</button>
+                <button id="updateDataBtn" class="btn">Обновить данные</button>
+                <div class="data-type-selector">
+                    <label for="dataType">Тип данных:</label>
+                    <select id="dataType" class="select-input">
+                        <option value="sales">Продажи</option>
+                        <option value="users">Пользователи</option>
+                        <option value="revenue">Выручка</option>
+                        <option value="conversion">Конверсия</option>
+                    </select>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Модальное окно для входа -->
+        <div id="loginModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Вход в систему</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email:</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль:</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+                <button class="btn btn-secondary modal-close">Закрыть</button>
+            </div>
+        </div>
+
+        <!-- Модальное окно для регистрации -->
+        <div id="registerModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Регистрация</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Имя:</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль:</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <button type="submit" class="btn">Зарегистрироваться</button>
+                </form>
+                <button class="btn btn-secondary modal-close">Закрыть</button>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <section class="ai-output-section">
+                <h2>AI Вывод</h2>
+                <div id="aiOutput" class="ai-output-container">
+                    <p>Здесь будет отображаться вывод ИИ...</p>
+                </div>
+            </section>
+
+            <section class="charts-section">
+                <h2>Графики</h2>
+                <div id="chartsContainer" class="charts-container">
+                    <div class="chart-wrapper">
+                        <canvas id="defaultChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
 </body>
-</html>
+</html> 
